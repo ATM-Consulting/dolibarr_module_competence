@@ -28,7 +28,8 @@
 
 			case 'delete':
 				$productivite_user->load($ATMdb, $_REQUEST['id']);
-				$productivite_user->delete($ATMdb, $_REQUEST['id']);
+				$productivite_user->fk_productivite=$_REQUEST['id'];
+				$productivite_user->delete($ATMdb);
 
 				$productivite_user->save($ATMdb);
 				?>
