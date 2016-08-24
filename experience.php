@@ -259,11 +259,11 @@ function _liste(&$ATMdb, $lignecv, $formation, $dif) {
 	dol_fiche_head($head, 'competence', $langs->trans('Utilisateur'),0, 'user');
 
 	?><table width="100%" class="border"><tbody>
-		<tr><td width="25%" valign="top">Réf.</td><td><?=$fuser->id ?></td></tr>
-		<tr><td width="25%" valign="top">Nom</td><td><?=$fuser->lastname ?></td></tr>
-		<tr><td width="25%" valign="top">Prénom</td><td><?=$fuser->firstname ?></td></tr>
+		<tr><td width="25%" valign="top">Réf.</td><td><?php echo $fuser->id ?></td></tr>
+		<tr><td width="25%" valign="top">Nom</td><td><?php echo $fuser->lastname ?></td></tr>
+		<tr><td width="25%" valign="top">Prénom</td><td><?php echo $fuser->firstname ?></td></tr>
 	</tbody></table>
-	<br/><?
+	<br/><?php
 
 	////////////AFFICHAGE DES LIGNES DE CV
 	$r = new TSSRenderControler($lignecv);
@@ -303,7 +303,7 @@ function _liste(&$ATMdb, $lignecv, $formation, $dif) {
 			,'messageNothing'=>"Aucune expérience professionnelle"
 			,'order_down'=>img_picto('','1downarrow.png', '', 0)
 			,'order_up'=>img_picto('','1uparrow.png', '', 0)
-			,'picto_search'=>'<img src="../../theme/rh/img/search.png">'
+			,'picto_search'=>'<img src="'.img_picto($langs->trans("Search"),'search.png','','',1).'">'
 
 		)
 		,'title'=>array(
@@ -322,9 +322,9 @@ function _liste(&$ATMdb, $lignecv, $formation, $dif) {
 	));
 
 		?>
-		<a class="butAction" href="?id=0&action=newlignecv&fk_user=<?=$fuser->id?>">Ajouter une expérience</a><div style="clear:both"></div>
+		<a class="butAction" href="?id=0&action=newlignecv&fk_user=<?php echo $fuser->id?>">Ajouter une expérience</a><div style="clear:both"></div>
 		<br/>
-		<?
+		<?php
 	$form->end();
 
 
@@ -370,7 +370,7 @@ function _liste(&$ATMdb, $lignecv, $formation, $dif) {
 			,'messageNothing'=>"Aucune formation suivie"
 			,'order_down'=>img_picto('','1downarrow.png', '', 0)
 			,'order_up'=>img_picto('','1uparrow.png', '', 0)
-			,'picto_search'=>'<img src="../../theme/rh/img/search.png">'
+			,'picto_search'=>'<img src="'.img_picto($langs->trans("Search"),'search.png','','',1).'">'
 
 		)
 		,'title'=>array(
@@ -390,9 +390,9 @@ function _liste(&$ATMdb, $lignecv, $formation, $dif) {
 
 	));
 	?>
-		<a class="butAction" href="?id=0&action=newformationcv&fk_user=<?=$fuser->id?>">Ajouter une formation</a><div style="clear:both"></div>
+		<a class="butAction" href="?id=0&action=newformationcv&fk_user=<?php echo $fuser->id?>">Ajouter une formation</a><div style="clear:both"></div>
 		<br/>
-	<?
+	<?php
 
 	////////////AFFICHAGE DES DIF
 	/*if((($user->rights->curriculumvitae->myactions->consulterOwnDif=="1")&&($user->id==$fuser->id))||($user->rights->curriculumvitae->myactions->consulterAllDif=="1")){
@@ -457,9 +457,9 @@ function _liste(&$ATMdb, $lignecv, $formation, $dif) {
 		));
 
 		if($user->rights->curriculumvitae->myactions->gererDif=="1"){
-			?><a class="butAction" href="?id=0&action=newDIF&fk_user=<?=$fuser->id?>">Ajouter une fiche de DIF</a><div style="clear:both"></div><?
+			?><a class="butAction" href="?id=0&action=newDIF&fk_user=<?php echo $fuser->id?>">Ajouter une fiche de DIF</a><div style="clear:both"></div><?php
 		}else{
-			?><br><br><?
+			?><br><br><?php
 		}
 	}*/
 
@@ -480,9 +480,9 @@ function _ficheCV(&$ATMdb, $lignecv, $tagCompetence, $mode) {
 	dol_fiche_head($head, $current_head, $langs->trans('Utilisateur'),0, 'user');
 
 	?><table width="100%" class="border"><tbody>
-		<tr><td width="25%" valign="top">Réf.</td><td><?=$fuser->id ?></td></tr>
-		<tr><td width="25%" valign="top">Nom</td><td><?=$fuser->lastname ?></td></tr>
-		<tr><td width="25%" valign="top">Prénom</td><td><?=$fuser->firstname ?></td></tr>
+		<tr><td width="25%" valign="top">Réf.</td><td><?php echo $fuser->id ?></td></tr>
+		<tr><td width="25%" valign="top">Nom</td><td><?php echo $fuser->lastname ?></td></tr>
+		<tr><td width="25%" valign="top">Prénom</td><td><?php echo $fuser->firstname ?></td></tr>
 	</tbody></table>
 	<br/><?php
 

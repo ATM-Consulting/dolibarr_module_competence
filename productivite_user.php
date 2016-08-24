@@ -295,7 +295,7 @@
 
 			$dash->initByData($ATMdb,$TData);
 
-			?><div id="chart_productivite_user" style="height:<?=$dash->hauteur?>px; margin-bottom:20px;"></div><?php
+			?><div id="chart_productivite_user" style="height:<?php echo $dash->hauteur?>px; margin-bottom:20px;"></div><?php
 
 			$dash->get('chart_productivite_user');
 
