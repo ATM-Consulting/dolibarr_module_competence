@@ -237,14 +237,14 @@ class modCompetence extends DolibarrModules
 		$r++;
 		
 		$this->rights[$r][0] = 7961;
-		$this->rights[$r][1] = 'Administrer les fiche de poste';
+		$this->rights[$r][1] = 'Administrer les fiches de poste';
 		$this->rights[$r][3] = 0;
 		$this->rights[$r][4] = 'poste';
         $this->rights[$r][5] = 'admin';
 		$r++;
 		
 		$this->rights[$r][0] = 7962;
-		$this->rights[$r][1] = 'Consulter les fiche de poste';
+		$this->rights[$r][1] = 'Consulter les fiches de poste';
 		$this->rights[$r][3] = 0;
 		$this->rights[$r][4] = 'poste';
         $this->rights[$r][5] = 'read';
