@@ -508,15 +508,18 @@ class modCompetence extends DolibarrModules
 	function init($options='')
 	{
 		$sql = array();
-
+		
 		if(!is_file( dol_buildpath("/competence/config.php" ))) {
-			 $data='<?php require(\'default.config.php\'); /* fichier de conf de base */';	
+			$data='<?php require(\'default.config.php\'); /* fichier de conf de base */';
 			
 			file_put_contents( dol_buildpath("/competence/config.php" ) , $data);
 		}
-
-		$url =dol_buildpath("/competence/script/create-maj-base.php",2);
-		file_get_contents($url);
+		
+		$db = &$this->db;
+		
+		define('INC_FROM_DOLIBARR',true);
+		dol_include_once("/competence/config.php");
+		dol_include_once("/competence/script/create-maj-base.php");
 		
 		//Création extrafield type de poste issu de la table llx_rh_fiche_poste
 		global $db;
